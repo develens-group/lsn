@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags  -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <title>Laser Slider v2.0.1</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="css/app.css" />
+
+    <!-- Javascript Assets -->
+    <script src="js/app.js" ></script>
+
+    <!-- Javascript Third Party Libraries: Components -->
+    <script src="js/libs/components.js" ></script>
+
+    <!-- Special script for current page -->
+   <!-- <script src="js/pages/dashboards-crm-analytics.js" defer></script>
+    <script src="js/pages/components-popover.js" defer></script>
+   -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      /**
+       * THIS SCRIPT REQUIRED FOR PREVENT FLICKERING IN SOME BROWSERS
+       */
+      localStorage.getItem("dark-mode") === "dark" &&
+        document.documentElement.classList.add("dark");
+    </script>
+  </head>
+  <body class="bg-white dark:bg-navy-700 print:hidden">
+<div class="upload-file-container">
+    <div class="flex flex-col pb-4">
+     <span class="pb-2">New File</span>
+    
+    <div class="filepond fp-grid fp-bordered [--fp-grid:2]">
+      <div class="filepond--root filepond--hopper" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right" data-style-button-remove-item-align="false" style="height: 67px;"><input class="filepond--browser" type="file" id="filepond--browser-2b9q6bw4k" name="filepond" aria-controls="filepond--assistant-2b9q6bw4k" aria-labelledby="filepond--drop-label-2b9q6bw4k" multiple=""><a class="filepond--credits" aria-hidden="true" href="https://pqina.nl/" target="_blank" rel="noopener noreferrer" style="transform: translateY(60px);">Powered by PQINA</a><div class="filepond--drop-label" style="transform: translate3d(0px, 0px, 0px); opacity: 1;"><label for="filepond--browser-2b9q6bw4k" id="filepond--drop-label-2b9q6bw4k" aria-hidden="true">Drag &amp; Drop your files or <span class="filepond--label-action" tabindex="0">Browse</span></label></div><div class="filepond--list-scroller" style="transform: translate3d(0px, 53px, 0px);"><ul class="filepond--list" role="list"></ul></div><div class="filepond--panel filepond--panel-root" data-scalable="true"><div class="filepond--panel-top filepond--panel-root"></div><div class="filepond--panel-center filepond--panel-root" style="transform: translate3d(0px, 7px, 0px) scale3d(1, 0.53, 1);"></div><div class="filepond--panel-bottom filepond--panel-root" style="transform: translate3d(0px, 60px, 0px);"></div></div><div class="filepond--drip"></div><span class="filepond--assistant" id="filepond--assistant-2b9q6bw4k" role="status" aria-live="polite" aria-relevant="additions"></span><fieldset class="filepond--data"></fieldset></div>
+    </div>
+    </div>
+    <div class="flex flex-col pb-4">
+        <span class="pb-2">New File From Wordpress</span>
+    <label class="btn w-full bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+        <input tabindex="-1" type="file" class="pointer-events-none absolute inset-0 h-full w-full opacity-0">
+      <div class="flex items-center  space-x-4">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 15L12 2M12 2L15 5.5M12 2L9 5.5" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8 22.0002H16C18.8284 22.0002 20.2426 22.0002 21.1213 21.1215C22 20.2429 22 18.8286 22 16.0002V15.0002C22 12.1718 22 10.7576 21.1213 9.8789C20.3529 9.11051 19.175 9.01406 17 9.00195M7 9.00195C4.82497 9.01406 3.64706 9.11051 2.87868 9.87889C2 10.7576 2 12.1718 2 15.0002L2 16.0002C2 18.8286 2 20.2429 2.87868 21.1215C3.17848 21.4213 3.54062 21.6188 4 21.749" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+        <span>WP Media</span>
+      </div>
+    </label>
+</div>
+<div class="flex flex-col pb-4">
+<span class="pb-2">Get File From a URL</span>
+    <label class="block">
+      <span class="relative mt-1.5 flex">
+        <input class="form-input peer w-full rounded border border-slate-300 bg-transparent px-3 py-2 pr-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Get file from a cloud" type="text">
+        <span class="pointer-events-none absolute right-0 flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11.5003 12H5.41872M5.24634 12.7972L4.24158 15.7986C3.69128 17.4424 3.41613 18.2643 3.61359 18.7704C3.78506 19.21 4.15335 19.5432 4.6078 19.6701C5.13111 19.8161 5.92151 19.4604 7.50231 18.7491L17.6367 14.1886C19.1797 13.4942 19.9512 13.1471 20.1896 12.6648C20.3968 12.2458 20.3968 11.7541 20.1896 11.3351C19.9512 10.8529 19.1797 10.5057 17.6367 9.81135L7.48483 5.24303C5.90879 4.53382 5.12078 4.17921 4.59799 4.32468C4.14397 4.45101 3.77572 4.78336 3.60365 5.22209C3.40551 5.72728 3.67772 6.54741 4.22215 8.18767L5.24829 11.2793C5.34179 11.561 5.38855 11.7019 5.407 11.8459C5.42338 11.9738 5.42321 12.1032 5.40651 12.231C5.38768 12.375 5.34057 12.5157 5.24634 12.7972Z" stroke="#6d7c91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </span>
+      </span>
+    </label>
+    </div>
+    <div class="flex flex-col pb-4">
+        <span class="pb-2">Generate With AI</span>
+        <label class="block">
+            <textarea
+              rows="4"
+              placeholder=" Enter Text"
+              class="form-textarea w-full resize-none rounded-lg bg-slate-150 p-2.5 placeholder:text-slate-400 dark:bg-navy-900 dark:placeholder:text-navy-300"
+            ></textarea>
+          </label>
+          <div class="flex my-3 items-center deminsion">
+            <input
+      class="form-input w-24 mr-2 rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+      placeholder="With"
+      type="text"
+    />
+    <svg fill="#6d7c91" width="20px" height="20px" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M 13.0117 40.0117 C 12.2148 40.8086 12.1914 42.1680 13.0117 42.9883 C 13.8086 43.8086 15.1680 43.7851 15.9883 42.9883 L 27.9883 30.9648 L 40.0117 42.9883 C 40.8086 43.7851 42.1680 43.8086 42.9648 42.9883 C 43.8086 42.1680 43.7851 40.8086 42.9648 40.0117 L 30.9648 27.9883 L 42.9648 15.9883 C 43.7851 15.1914 43.8086 13.8086 42.9648 13.0117 C 42.1680 12.1914 40.8086 12.2148 40.0117 13.0117 L 27.9883 25.0352 L 15.9883 13.0117 C 15.1680 12.2148 13.8086 12.1914 13.0117 13.0117 C 12.1914 13.8086 12.2148 15.1914 13.0117 15.9883 L 25.0117 27.9883 Z"></path></g></svg>
+    <input
+      class="form-input w-24 mx-2 rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+      placeholder="Height"
+      type="text"
+    />
+    <button class="btn">
+    <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11.5003 12H5.41872M5.24634 12.7972L4.24158 15.7986C3.69128 17.4424 3.41613 18.2643 3.61359 18.7704C3.78506 19.21 4.15335 19.5432 4.6078 19.6701C5.13111 19.8161 5.92151 19.4604 7.50231 18.7491L17.6367 14.1886C19.1797 13.4942 19.9512 13.1471 20.1896 12.6648C20.3968 12.2458 20.3968 11.7541 20.1896 11.3351C19.9512 10.8529 19.1797 10.5057 17.6367 9.81135L7.48483 5.24303C5.90879 4.53382 5.12078 4.17921 4.59799 4.32468C4.14397 4.45101 3.77572 4.78336 3.60365 5.22209C3.40551 5.72728 3.67772 6.54741 4.22215 8.18767L5.24829 11.2793C5.34179 11.561 5.38855 11.7019 5.407 11.8459C5.42338 11.9738 5.42321 12.1032 5.40651 12.231C5.38768 12.375 5.34057 12.5157 5.24634 12.7972Z" stroke="#6d7c91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    </button>
+          </div>
+        </div>
+    <div class="upload-tabs
+     flex justify-between align-items-center pb-4">
+<!--uploads Tab-->
+<div id="tab-wrapper-upload" class="tabs flex flex-col">
+    <div class="is-scrollbar-hidden overflow-x-auto">
+      <div class="tabs-list flex justify-between">
+        <button
+          class="tab btn shrink-0 rounded-none border-b-2 px-3 py-2 font-medium w-6/12"
+          data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
+          data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+          data-target="#tabupload-inserted"
+        >
+          Inserted
+        </button>
+        <button
+          class="tab btn shrink-0 rounded-none border-b-2 px-3 py-2 font-medium w-6/12"
+          data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
+          data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+          data-target="#tabupload-edited"
+        >
+          Edited
+        </button>
+      </div>
+    </div>
+    <div class="pt-4">
+      <div class="tab-content tab-shift-left" id="tabupload-inserted">
+        <div>
+            <div class="grid upload-insert-cards grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+                <div class="card uic-item ">
+                  <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                  <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                    <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                        <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                            <ul class="space-y-1 font-inter font-medium">
+                              <li>
+                                <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                  <span class="text-xs">Set as background</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                  <span class="text-xs">Add as layer</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                  <span class="text-xs">Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card uic-item ">
+                    <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                    <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                      <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                          <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                              <ul class="space-y-1 font-inter font-medium">
+                                <li>
+                                  <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                    <span class="text-xs">Set as background</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Add as layer</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Delete</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card uic-item ">
+                    <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                    <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                      <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                          <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                              <ul class="space-y-1 font-inter font-medium">
+                                <li>
+                                  <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                    <span class="text-xs">Set as background</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Add as layer</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Delete</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card uic-item ">
+                    <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                    <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                      <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                          <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                              <ul class="space-y-1 font-inter font-medium">
+                                <li>
+                                  <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                    <span class="text-xs">Set as background</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Add as layer</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Delete</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          
+
+        </div>
+      </div>
+      <div class="tab-content tab-shift-left" id="tabupload-edited">
+        <div>
+            <div class="grid upload-insert-cards grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+                <div class="card uic-item ">
+                  <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                  <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                    <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                        <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                            <ul class="space-y-1 font-inter font-medium">
+                              <li>
+                                <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                  <span class="text-xs">Set as background</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                  <span class="text-xs">Add as layer</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                  <span class="text-xs">Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card uic-item ">
+                    <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                    <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                      <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                          <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                              <ul class="space-y-1 font-inter font-medium">
+                                <li>
+                                  <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                    <span class="text-xs">Set as background</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Add as layer</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Delete</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card uic-item ">
+                    <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                    <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                      <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                          <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                              <ul class="space-y-1 font-inter font-medium">
+                                <li>
+                                  <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                    <span class="text-xs">Set as background</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Add as layer</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Delete</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card uic-item ">
+                    <img class="h-40 w-40 rounded-lg object-cover object-center" src="images/s11.png" alt="image">
+                    <div class="absolute hovered inset-0 flex h-full w-full flex-col justify-end">
+                      <div class="space-y-1.5 rounded-lg bg-gradient-to-t from-[#19213299] via-[#19213266] to-transparent px-4 pb-12 pt-3">
+                          <div class="p-1 sm:px-5 bg-white rounded hidden childhovered delay-150">
+                              <ul class="space-y-1 font-inter font-medium">
+                                <li>
+                                  <a class="inline-flex items-center font-medium tracking-wide text-primary outline-none dark:text-accent-light" href="#">
+                                    <span class="text-xs">Set as background</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Add as layer</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="inline-flex items-center tracking-wide outline-none transition-colors hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100" href="#">
+                                    <span class="text-xs">Delete</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+
+  <script>
+    new Tab(document.querySelector("#tab-wrapper-upload"));
+  </script>
+    </div>
+  </div>
+  </body>
+  </html>  
