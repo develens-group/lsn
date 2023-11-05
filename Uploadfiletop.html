@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags  -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <title>Laser Slider v2.0.1</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="css/app.css" />
+
+    <!-- Javascript Assets -->
+    <script src="js/app.js" ></script>
+
+    <!-- Javascript Third Party Libraries: Components -->
+    <script src="js/libs/components.js" ></script>
+
+    <!-- Special script for current page -->
+   <!-- <script src="js/pages/dashboards-crm-analytics.js" defer></script>
+    <script src="js/pages/components-popover.js" defer></script>
+   -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      /**
+       * THIS SCRIPT REQUIRED FOR PREVENT FLICKERING IN SOME BROWSERS
+       */
+      localStorage.getItem("dark-mode") === "dark" &&
+        document.documentElement.classList.add("dark");
+    </script>
+  </head>
+  <body class="bg-white dark:bg-navy-700 print:hidden">
+    <div class="nav-main-container flex justify-between items-center">
+      <div class="main-header-item flex items-center justify-center">
+
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 11C8.10457 11 9 10.1046 9 9C9 7.89543 8.10457 7 7 7C5.89543 7 5 7.89543 5 9C5 10.1046 5.89543 11 7 11Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M5.56055 21C11.1305 11.1 15.7605 9.35991 21.0005 15.7899" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14.35 3H5C3.93913 3 2.92172 3.42136 2.17157 4.17151C1.42142 4.92165 1 5.93913 1 7V17C1 18.0609 1.42142 19.0782 2.17157 19.8284C2.92172 20.5785 3.93913 21 5 21H17C18.0609 21 19.0783 20.5785 19.8284 19.8284C20.5786 19.0782 21 18.0609 21 17V9" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M22.3098 3.16996L17.2098 8.26005C16.7098 8.77005 15.2098 8.99996 14.8698 8.66996C14.5298 8.33996 14.7598 6.82999 15.2698 6.31999L20.3599 1.23002C20.6171 0.964804 20.9692 0.812673 21.3386 0.807047C21.7081 0.80142 22.0646 0.942731 22.3298 1.19999C22.5951 1.45725 22.7472 1.8093 22.7529 2.17875C22.7585 2.5482 22.6171 2.90475 22.3599 3.16996H22.3098Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.5 11.5C8.5 10.0858 8.5 9.37868 8.93934 8.93934C9.37868 8.5 10.0858 8.5 11.5 8.5H12.5C13.9142 8.5 14.6213 8.5 15.0607 8.93934C15.5 9.37868 15.5 10.0858 15.5 11.5V12.5C15.5 13.9142 15.5 14.6213 15.0607 15.0607C14.6213 15.5 13.9142 15.5 12.5 15.5H11.5C10.0858 15.5 9.37868 15.5 8.93934 15.0607C8.5 14.6213 8.5 13.9142 8.5 12.5V11.5Z" stroke="#6d7c91" stroke-width="1.5"></path> <path d="M22 19H13C9.22876 19 7.34315 19 6.17157 17.8284C5.51839 17.1752 5.22937 16.3001 5.10149 15M5 11V2" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> <path d="M8 5H11C14.7712 5 16.6569 5 17.8284 6.17157C18.4816 6.82475 18.7706 7.69989 18.8985 9M2 5H5M19 19V22M19 13V16" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+        <svg width="25px" height="25px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#6d7c91"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>line-style-solid</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <rect x="4" y="7" width="40" height="4" rx="2" ry="2"></rect> <rect x="4" y="27" width="10" height="4" rx="2" ry="2"></rect> <rect x="19" y="27" width="10" height="4" rx="2" ry="2"></rect> <rect x="34" y="27" width="10" height="4" rx="2" ry="2"></rect> <rect x="26" y="17" width="18" height="4" rx="2" ry="2"></rect> <rect x="4" y="17" width="18" height="4" rx="2" ry="2"></rect> <rect x="40" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="31" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="22" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="13" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="4" y="37" width="4" height="4" rx="2" ry="2"></rect> </g> </g> </g></svg>
+
+      </div>
+      <div class="main-header-item flex items-center justify-center">
+
+        <button class="btn space-x-2 border font-medium effectbtn mr-2">
+          <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 8.27V4.23C22 2.64 21.36 2 19.77 2H15.73C14.14 2 13.5 2.64 13.5 4.23V8.27C13.5 9.86 14.14 10.5 15.73 10.5H19.77C21.36 10.5 22 9.86 22 8.27Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10.5 8.52V3.98C10.5 2.57 9.86 2 8.27 2H4.23C2.64 2 2 2.57 2 3.98V8.51C2 9.93 2.64 10.49 4.23 10.49H8.27C9.86 10.5 10.5 9.93 10.5 8.52Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10.5 19.77V15.73C10.5 14.14 9.86 13.5 8.27 13.5H4.23C2.64 13.5 2 14.14 2 15.73V19.77C2 21.36 2.64 22 4.23 22H8.27C9.86 22 10.5 21.36 10.5 19.77Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <g opacity="0.4"> <path d="M14.5 17.5H20.5" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> <path d="M17.5 20.5V14.5" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> </g> </g></svg>
+          <span>Effect</span>
+        </button>
+        <button class="btn space-x-2 border font-medium animbtn mr-2">
+          <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.31993 13.28H12.4099V20.48C12.4099 21.54 13.7299 22.04 14.4299 21.24L21.9999 12.64C22.6599 11.89 22.1299 10.72 21.1299 10.72H18.0399V3.51997C18.0399 2.45997 16.7199 1.95997 16.0199 2.75997L8.44994 11.36C7.79994 12.11 8.32993 13.28 9.31993 13.28Z" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M8.5 4H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M7.5 20H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M4.5 12H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          <span>Anim</span>
+        </button>
+        
+      </div>
+      <div class="main-header-item flex items-center justify-center"></div>
+      <div class="main-header-item flex items-center justify-center"></div>
+    </div>
+  </body>
+  </html>  
