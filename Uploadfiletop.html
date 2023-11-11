@@ -1,68 +1,294 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Meta tags  -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
+<html lang="en" class="flex items-center">
 
-    <title>Laser Slider v2.0.1</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+<head>
+  <!-- Meta tags  -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
-    <!-- CSS Assets -->
-    <link rel="stylesheet" href="css/app.css" />
+  <title>Laser Slider v2.0.1</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
 
-    <!-- Javascript Assets -->
-    <script src="js/app.js" ></script>
+  <!-- CSS Assets -->
+  <link rel="stylesheet" href="css/app.css" />
 
-    <!-- Javascript Third Party Libraries: Components -->
-    <script src="js/libs/components.js" ></script>
+  <!-- Javascript Assets -->
+  <script src="js/app.js"></script>
 
-    <!-- Special script for current page -->
-   <!-- <script src="js/pages/dashboards-crm-analytics.js" defer></script>
+  <!-- Javascript Third Party Libraries: Components -->
+  <script src="js/libs/components.js"></script>
+
+  <!-- Special script for current page -->
+  <!-- <script src="js/pages/dashboards-crm-analytics.js" defer></script>
     <script src="js/pages/components-popover.js" defer></script>
    -->
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <script>
-      /**
-       * THIS SCRIPT REQUIRED FOR PREVENT FLICKERING IN SOME BROWSERS
-       */
-      localStorage.getItem("dark-mode") === "dark" &&
-        document.documentElement.classList.add("dark");
-    </script>
-  </head>
-  <body class="bg-white dark:bg-navy-700 print:hidden">
-    <div class="nav-main-container flex justify-between items-center">
-      <div class="main-header-item flex items-center justify-center">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <script>
+    /**
+     * THIS SCRIPT REQUIRED FOR PREVENT FLICKERING IN SOME BROWSERS
+     */
+    localStorage.getItem("dark-mode") === "dark" &&
+      document.documentElement.classList.add("dark");
+  </script>
+</head>
 
-        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 11C8.10457 11 9 10.1046 9 9C9 7.89543 8.10457 7 7 7C5.89543 7 5 7.89543 5 9C5 10.1046 5.89543 11 7 11Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M5.56055 21C11.1305 11.1 15.7605 9.35991 21.0005 15.7899" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14.35 3H5C3.93913 3 2.92172 3.42136 2.17157 4.17151C1.42142 4.92165 1 5.93913 1 7V17C1 18.0609 1.42142 19.0782 2.17157 19.8284C2.92172 20.5785 3.93913 21 5 21H17C18.0609 21 19.0783 20.5785 19.8284 19.8284C20.5786 19.0782 21 18.0609 21 17V9" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M22.3098 3.16996L17.2098 8.26005C16.7098 8.77005 15.2098 8.99996 14.8698 8.66996C14.5298 8.33996 14.7598 6.82999 15.2698 6.31999L20.3599 1.23002C20.6171 0.964804 20.9692 0.812673 21.3386 0.807047C21.7081 0.80142 22.0646 0.942731 22.3298 1.19999C22.5951 1.45725 22.7472 1.8093 22.7529 2.17875C22.7585 2.5482 22.6171 2.90475 22.3599 3.16996H22.3098Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.5 11.5C8.5 10.0858 8.5 9.37868 8.93934 8.93934C9.37868 8.5 10.0858 8.5 11.5 8.5H12.5C13.9142 8.5 14.6213 8.5 15.0607 8.93934C15.5 9.37868 15.5 10.0858 15.5 11.5V12.5C15.5 13.9142 15.5 14.6213 15.0607 15.0607C14.6213 15.5 13.9142 15.5 12.5 15.5H11.5C10.0858 15.5 9.37868 15.5 8.93934 15.0607C8.5 14.6213 8.5 13.9142 8.5 12.5V11.5Z" stroke="#6d7c91" stroke-width="1.5"></path> <path d="M22 19H13C9.22876 19 7.34315 19 6.17157 17.8284C5.51839 17.1752 5.22937 16.3001 5.10149 15M5 11V2" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> <path d="M8 5H11C14.7712 5 16.6569 5 17.8284 6.17157C18.4816 6.82475 18.7706 7.69989 18.8985 9M2 5H5M19 19V22M19 13V16" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
-        <svg width="25px" height="25px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#6d7c91"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>line-style-solid</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <rect x="4" y="7" width="40" height="4" rx="2" ry="2"></rect> <rect x="4" y="27" width="10" height="4" rx="2" ry="2"></rect> <rect x="19" y="27" width="10" height="4" rx="2" ry="2"></rect> <rect x="34" y="27" width="10" height="4" rx="2" ry="2"></rect> <rect x="26" y="17" width="18" height="4" rx="2" ry="2"></rect> <rect x="4" y="17" width="18" height="4" rx="2" ry="2"></rect> <rect x="40" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="31" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="22" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="13" y="37" width="4" height="4" rx="2" ry="2"></rect> <rect x="4" y="37" width="4" height="4" rx="2" ry="2"></rect> </g> </g> </g></svg>
-
+<body class="bg-white dark:bg-navy-700 print:hidden w-full">
+  <div class="nav-main-container flex justify-between items-center divide-x">
+    <div class="main-header-item flex items-center justify-evenly grow">
+      <button class="btn h-9 w-9 p-0 detect-object-btn">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M7 11C8.10457 11 9 10.1046 9 9C9 7.89543 8.10457 7 7 7C5.89543 7 5 7.89543 5 9C5 10.1046 5.89543 11 7 11Z"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5.56055 21C11.1305 11.1 15.7605 9.35991 21.0005 15.7899" stroke="#6d7c91" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M14.35 3H5C3.93913 3 2.92172 3.42136 2.17157 4.17151C1.42142 4.92165 1 5.93913 1 7V17C1 18.0609 1.42142 19.0782 2.17157 19.8284C2.92172 20.5785 3.93913 21 5 21H17C18.0609 21 19.0783 20.5785 19.8284 19.8284C20.5786 19.0782 21 18.0609 21 17V9"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M22.3098 3.16996L17.2098 8.26005C16.7098 8.77005 15.2098 8.99996 14.8698 8.66996C14.5298 8.33996 14.7598 6.82999 15.2698 6.31999L20.3599 1.23002C20.6171 0.964804 20.9692 0.812673 21.3386 0.807047C21.7081 0.80142 22.0646 0.942731 22.3298 1.19999C22.5951 1.45725 22.7472 1.8093 22.7529 2.17875C22.7585 2.5482 22.6171 2.90475 22.3599 3.16996H22.3098Z"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+      <button class="btn h-9 w-9 p-0 crop-btn">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M8.5 11.5C8.5 10.0858 8.5 9.37868 8.93934 8.93934C9.37868 8.5 10.0858 8.5 11.5 8.5H12.5C13.9142 8.5 14.6213 8.5 15.0607 8.93934C15.5 9.37868 15.5 10.0858 15.5 11.5V12.5C15.5 13.9142 15.5 14.6213 15.0607 15.0607C14.6213 15.5 13.9142 15.5 12.5 15.5H11.5C10.0858 15.5 9.37868 15.5 8.93934 15.0607C8.5 14.6213 8.5 13.9142 8.5 12.5V11.5Z"
+              stroke="#6d7c91" stroke-width="1.5"></path>
+            <path d="M22 19H13C9.22876 19 7.34315 19 6.17157 17.8284C5.51839 17.1752 5.22937 16.3001 5.10149 15M5 11V2"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path>
+            <path
+              d="M8 5H11C14.7712 5 16.6569 5 17.8284 6.17157C18.4816 6.82475 18.7706 7.69989 18.8985 9M2 5H5M19 19V22M19 13V16"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path>
+          </g>
+        </svg>
+      </button>
+      <div id="line-height-btn">
+      <button class="btn h-9 w-9 p-0 line-height-btn popper-ref">
+        <svg width="25px" height="25px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#6d7c91">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <title>line-style-solid</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="invisible_box" data-name="invisible box">
+                <rect width="48" height="48" fill="none"></rect>
+              </g>
+              <g id="icons_Q2" data-name="icons Q2">
+                <rect x="4" y="7" width="40" height="4" rx="2" ry="2"></rect>
+                <rect x="4" y="27" width="10" height="4" rx="2" ry="2"></rect>
+                <rect x="19" y="27" width="10" height="4" rx="2" ry="2"></rect>
+                <rect x="34" y="27" width="10" height="4" rx="2" ry="2"></rect>
+                <rect x="26" y="17" width="18" height="4" rx="2" ry="2"></rect>
+                <rect x="4" y="17" width="18" height="4" rx="2" ry="2"></rect>
+                <rect x="40" y="37" width="4" height="4" rx="2" ry="2"></rect>
+                <rect x="31" y="37" width="4" height="4" rx="2" ry="2"></rect>
+                <rect x="22" y="37" width="4" height="4" rx="2" ry="2"></rect>
+                <rect x="13" y="37" width="4" height="4" rx="2" ry="2"></rect>
+                <rect x="4" y="37" width="4" height="4" rx="2" ry="2"></rect>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </button>
+      <div class="popper-root">
+        <div class="popper-box max-w-xs">
+          <div
+            class="rounded-md border border-slate-150 bg-white p-4 dark:border-navy-600 dark:bg-navy-700"
+          >
+          <ul class="p-2">
+            <li>
+              <input checked="" class="tablet-item-check form-switch h-5 w-10 rounded-full bg-slate-300 [--thumb-border:6px] before:rounded-full before:bg-slate-50 checked:bg-primary checked:before:bg-white dark:bg-navy-900 dark:before:bg-navy-300 dark:checked:bg-accent dark:checked:before:bg-white" type="checkbox">
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="main-header-item flex items-center justify-center">
-
-        <button class="btn space-x-2 border font-medium effectbtn mr-2">
-          <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 8.27V4.23C22 2.64 21.36 2 19.77 2H15.73C14.14 2 13.5 2.64 13.5 4.23V8.27C13.5 9.86 14.14 10.5 15.73 10.5H19.77C21.36 10.5 22 9.86 22 8.27Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10.5 8.52V3.98C10.5 2.57 9.86 2 8.27 2H4.23C2.64 2 2 2.57 2 3.98V8.51C2 9.93 2.64 10.49 4.23 10.49H8.27C9.86 10.5 10.5 9.93 10.5 8.52Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10.5 19.77V15.73C10.5 14.14 9.86 13.5 8.27 13.5H4.23C2.64 13.5 2 14.14 2 15.73V19.77C2 21.36 2.64 22 4.23 22H8.27C9.86 22 10.5 21.36 10.5 19.77Z" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <g opacity="0.4"> <path d="M14.5 17.5H20.5" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> <path d="M17.5 20.5V14.5" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path> </g> </g></svg>
-          <span>Effect</span>
-        </button>
-        <button class="btn space-x-2 border font-medium animbtn mr-2">
-          <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.31993 13.28H12.4099V20.48C12.4099 21.54 13.7299 22.04 14.4299 21.24L21.9999 12.64C22.6599 11.89 22.1299 10.72 21.1299 10.72H18.0399V3.51997C18.0399 2.45997 16.7199 1.95997 16.0199 2.75997L8.44994 11.36C7.79994 12.11 8.32993 13.28 9.31993 13.28Z" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M8.5 4H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M7.5 20H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M4.5 12H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-          <span>Anim</span>
-        </button>
-        
-      </div>
-      <div class="main-header-item flex items-center justify-center"></div>
-      <div class="main-header-item flex items-center justify-center"></div>
     </div>
-  </body>
-  </html>  
+    </div>
+    </div>
+    <div class="main-header-item flex items-center justify-evenly grow">
+
+      <button class="btn space-x-2 border font-medium effectbtn mr-2">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M22 8.27V4.23C22 2.64 21.36 2 19.77 2H15.73C14.14 2 13.5 2.64 13.5 4.23V8.27C13.5 9.86 14.14 10.5 15.73 10.5H19.77C21.36 10.5 22 9.86 22 8.27Z"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M10.5 8.52V3.98C10.5 2.57 9.86 2 8.27 2H4.23C2.64 2 2 2.57 2 3.98V8.51C2 9.93 2.64 10.49 4.23 10.49H8.27C9.86 10.5 10.5 9.93 10.5 8.52Z"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M10.5 19.77V15.73C10.5 14.14 9.86 13.5 8.27 13.5H4.23C2.64 13.5 2 14.14 2 15.73V19.77C2 21.36 2.64 22 4.23 22H8.27C9.86 22 10.5 21.36 10.5 19.77Z"
+              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g opacity="0.4">
+              <path d="M14.5 17.5H20.5" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M17.5 20.5V14.5" stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path>
+            </g>
+          </g>
+        </svg>
+        <span>Effect</span>
+      </button>
+      <button class="btn space-x-2 border font-medium animbtn mr-2">
+        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M9.31993 13.28H12.4099V20.48C12.4099 21.54 13.7299 22.04 14.4299 21.24L21.9999 12.64C22.6599 11.89 22.1299 10.72 21.1299 10.72H18.0399V3.51997C18.0399 2.45997 16.7199 1.95997 16.0199 2.75997L8.44994 11.36C7.79994 12.11 8.32993 13.28 9.31993 13.28Z"
+              stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+            <path opacity="0.4" d="M8.5 4H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round"></path>
+            <path opacity="0.4" d="M7.5 20H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round"></path>
+            <path opacity="0.4" d="M4.5 12H1.5" stroke="#6d7c91" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+        <span>Anim</span>
+      </button>
+
+    </div>
+    <div class="main-header-item flex items-center justify-evenly grow">
+      <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        stroke="#6d7c91">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <g id="Menu / Menu_Alt_04">
+            <path id="Vector" d="M5 17H19M5 12H19M5 7H13" stroke="#6d7c91" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </g>
+        </g>
+      </svg>
+      <svg fill="#6d7c91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="25px" height="25px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <g id="5151e0c8492e5103c096af88a51f5fb6">
+            <path display="inline"
+              d="M256,0.5C115.117,0.5,0.5,115.109,0.5,255.992C0.5,396.874,115.117,511.5,256,511.5 c140.879,0,255.5-114.626,255.5-255.508C511.5,115.109,396.879,0.5,256,0.5z M26.287,255.992c0-33.306,7.145-64.923,19.89-93.488 l109.582,300.225C79.117,425.502,26.287,346.914,26.287,255.992z M256,485.722c-22.547,0-44.309-3.307-64.898-9.361l68.932-200.274 l70.604,193.446c0.466,1.135,1.035,2.179,1.646,3.165C308.406,481.102,282.748,485.722,256,485.722z M287.659,148.286 c13.827-0.724,26.29-2.179,26.29-2.179c12.376-1.464,10.916-19.658-1.468-18.93c0,0-37.207,2.919-61.23,2.919 c-22.568,0-60.494-2.919-60.494-2.919c-12.388-0.728-13.839,18.198-1.456,18.93c0,0,11.715,1.455,24.095,2.179l35.784,98.063 l-50.277,150.767l-83.649-248.83c13.84-0.724,26.286-2.179,26.286-2.179c12.372-1.464,10.912-19.658-1.468-18.93 c0,0-37.198,2.919-61.222,2.919c-4.309,0-9.386-0.108-14.784-0.283C105.141,67.457,175.745,26.274,256,26.274 c59.8,0,114.251,22.868,155.121,60.315c-0.989-0.058-1.958-0.183-2.978-0.183c-22.563,0-38.574,19.653-38.574,40.771 c0,18.93,10.92,34.948,22.564,53.874c8.737,15.299,18.938,34.953,18.938,63.355c0,19.657-7.56,42.475-17.479,74.259l-22.917,76.554 L287.659,148.286z M371.486,454.545l70.163-202.861c13.104-32.77,17.47-58.977,17.47-82.272c0-8.458-0.558-16.31-1.547-23.625 c17.932,32.715,28.137,70.262,28.137,110.205C485.709,340.738,439.782,414.727,371.486,454.545z">
+            </path>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="main-header-item flex items-center justify-evenly grow">
+      <svg height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 262.843 262.843" xml:space="preserve" fill="#6d7c91">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <g>
+            <g>
+              <path style="fill:#6d7c91;"
+                d="M13.598,240.657C6.086,240.657,0,234.571,0,227.059V27.625c0-7.511,6.086-13.598,13.598-13.598 s13.598,6.086,13.598,13.598v199.434C27.195,234.571,21.109,240.657,13.598,240.657z">
+              </path>
+            </g>
+            <g>
+              <path style="fill:#6d7c91;"
+                d="M60.727,223.431c-7.511,0-13.598-6.086-13.598-13.598V55.729c0-7.511,6.086-13.598,13.598-13.598 s13.598,6.086,13.598,13.598v154.105C74.325,217.345,68.238,223.431,60.727,223.431z">
+              </path>
+            </g>
+            <g>
+              <path style="fill:#6d7c91;"
+                d="M154.986,231.59c-7.511,0-13.598-6.086-13.598-13.598V55.729c0-7.511,6.086-13.598,13.598-13.598 s13.598,6.086,13.598,13.598v162.264C168.584,225.504,162.497,231.59,154.986,231.59z">
+              </path>
+            </g>
+            <g>
+              <path style="fill:#6d7c91;"
+                d="M202.116,248.815c-7.511,0-13.598-6.086-13.598-13.598V37.6c0-7.511,6.086-13.598,13.598-13.598 c7.511,0,13.598,6.086,13.598,13.598v197.618C215.713,242.729,209.627,248.815,202.116,248.815z">
+              </path>
+            </g>
+            <g>
+              <path style="fill:#6d7c91;"
+                d="M249.245,240.657c-7.511,0-13.598-6.086-13.598-13.598V27.625c0-7.511,6.086-13.598,13.598-13.598 s13.598,6.086,13.598,13.598v199.434C262.843,234.571,256.756,240.657,249.245,240.657z">
+              </path>
+            </g>
+            <g>
+              <path style="fill:#6d7c91;"
+                d="M107.857,204.395c-7.511,0-13.598-6.086-13.598-13.598V77.485c0-7.511,6.086-13.598,13.598-13.598 s13.598,6.086,13.598,13.598v113.312C121.454,198.308,115.368,204.395,107.857,204.395z">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M15.197 3.35462C16.8703 1.67483 19.4476 1.53865 20.9536 3.05046C22.4596 4.56228 22.3239 7.14956 20.6506 8.82935L18.2268 11.2626M10.0464 14C8.54044 12.4882 8.67609 9.90087 10.3494 8.22108L12.5 6.06212"
+            stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path>
+          <path
+            d="M13.9536 10C15.4596 11.5118 15.3239 14.0991 13.6506 15.7789L11.2268 18.2121L8.80299 20.6454C7.12969 22.3252 4.55237 22.4613 3.0464 20.9495C1.54043 19.4377 1.67609 16.8504 3.34939 15.1706L5.77323 12.7373"
+            stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round"></path>
+        </g>
+      </svg>
+      <svg fill="#6d7c91" width="25px" height="25px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M255.9.2h-64v64h64zM0 64.17v64h64v-64zM128 .2H64v64h64zm64 255.9v64h64v-64zM0 192.12v64h64v-64zM383.85.2h-64v64h64zm128 0h-64v64h64zM128 256.1H64v64h64zM511.8 448v-64h-64v64zm0-128v-64h-64v64zM383.85 512h64v-64h-64zm128-319.88v-64h-64v64zM128 512h64v-64h-64zM0 512h64v-64H0zm255.9 0h64v-64h-64zM0 320.07v64h64v-64zm319.88-191.92v-64h-64v64zm-64 128h64v-64h-64zm-64 128v64h64v-64zm128-64h64v-64h-64zm0-127.95h64v-64h-64zm0 191.93v64h64v-64zM64 384.05v64h64v-64zm128-255.9v-64h-64v64zm191.92 255.9h64v-64h-64zm-128-191.93v-64h-64v64zm128-127.95v64h64v-64zm-128 255.9v64h64v-64zm-64-127.95H128v64h64zm191.92 64h64v-64h-64zM128 128.15H64v64h64zm0 191.92v64h64v-64z">
+          </path>
+        </g>
+      </svg>
+
+      <svg fill="#6d7c91" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M11.29,12l3.54-3.54a1,1,0,0,0,0-1.41,1,1,0,0,0-1.42,0L9.17,11.29a1,1,0,0,0,0,1.42L13.41,17a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41Z">
+          </path>
+        </g>
+      </svg>
+      <svg fill="#6d7c91" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M14.83,11.29,10.59,7.05a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41L12.71,12,9.17,15.54a1,1,0,0,0,0,1.41,1,1,0,0,0,.71.29,1,1,0,0,0,.71-.29l4.24-4.24A1,1,0,0,0,14.83,11.29Z">
+          </path>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <script>
+    const config = {
+      placement: "bottom-start",
+      modifiers: [
+        { name: "flip", options: { fallbackPlacements: ["bottom", "top"] } },
+        { name: "preventOverflow", options: { padding: 10 } },
+        {
+          name: "offset",
+          options: {
+            offset: [0, 12],
+          },
+        },
+      ],
+    };
+    // Basic popover
+    new Popper("#line-height-btn", ".popper-ref", ".popper-root", config);
+    </script>
+</body>
+
+</html>
