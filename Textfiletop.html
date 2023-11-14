@@ -19,7 +19,7 @@
 
   <!-- Javascript Third Party Libraries: Components -->
   <script src="js/libs/components.js"></script>
-
+	<script src="js/color-picker.js"></script>
   <!-- Special script for current page -->
   <!-- <script src="js/pages/dashboards-crm-analytics.js" defer></script>
     <script src="js/pages/components-popover.js" defer></script>
@@ -27,6 +27,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" type="text/css" href="css/color-picker.css" media="all">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet" />
@@ -43,9 +44,34 @@
   <div class="nav-main-container flex justify-between items-center divide-x">
     <div class="main-header-item flex items-center justify-evenly grow">
       <button class="btn h-9 w-9 p-0 color-picker-btn">
-        <input type="color" class="input" name="">
-        </svg>
+        <div class="input colorpicker w-full h-full" >
+          </div>
+
       </button>
+      <script>
+        document.querySelector('.colorpicker').addEventListener('click',function(){
+          document.querySelector('.colorpicker').querySelectorAll("div")[0].style.display='block';
+        });
+        let color_pickers = [
+    new ColorPickerControl({ container: document.querySelector('.colorpicker')}),
+    // more instances...
+];
+new ColorPickerControl({ 
+    container: document.querySelector('.colorpicker'),
+    theme: 'light'
+}),
+
+color_pickers.forEach(color_picker => {
+  color_picker.on('change', function(color){
+    document.getElementById("demo").style.setProperty('color', color.toHEX());
+    document.getElementById("demo").style.setProperty('color', color.a / 255);
+    color_pickers.filter(p=>p!=color_picker).forEach((p) => {
+      p.color.fromHSVa(color.h, color.s, color.v, color.a);
+      p.update(false);
+    });
+  });
+}); 
+      </script>
       <button class="btn h-9 w-9 p-0 detect-object-btn">
         <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
