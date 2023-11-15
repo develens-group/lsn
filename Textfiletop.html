@@ -19,7 +19,7 @@
 
   <!-- Javascript Third Party Libraries: Components -->
   <script src="js/libs/components.js"></script>
-	<script src="js/color-picker.js"></script>
+	<script src="js/coloris.min.js"></script>
   <!-- Special script for current page -->
   <!-- <script src="js/pages/dashboards-crm-analytics.js" defer></script>
     <script src="js/pages/components-popover.js" defer></script>
@@ -27,7 +27,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" type="text/css" href="css/color-picker.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/coloris.min.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet" />
@@ -44,52 +44,56 @@
   <div class="nav-main-container flex justify-between items-center divide-x">
     <div class="main-header-item flex items-center justify-evenly grow">
       <button class="btn h-9 w-9 p-0 color-picker-btn">
-        <div class="input colorpicker w-full h-full" >
-          </div>
+        <input class="input coloris colorpicker w-full h-full" value="rgb(255, 0, 0)" >
+          
 
       </button>
       <script>
-        document.querySelector('.colorpicker').addEventListener('click',function(){
-          document.querySelector('.colorpicker').querySelectorAll("div")[0].style.display='block';
-        });
-        let color_pickers = [
-    new ColorPickerControl({ container: document.querySelector('.colorpicker')}),
-    // more instances...
-];
-new ColorPickerControl({ 
-    container: document.querySelector('.colorpicker'),
-    theme: 'light'
-}),
-
-color_pickers.forEach(color_picker => {
-  color_picker.on('change', function(color){
-    document.getElementById("demo").style.setProperty('color', color.toHEX());
-    document.getElementById("demo").style.setProperty('color', color.a / 255);
-    color_pickers.filter(p=>p!=color_picker).forEach((p) => {
-      p.color.fromHSVa(color.h, color.s, color.v, color.a);
-      p.update(false);
+        Coloris({
+      el: '.coloris',
+      swatches: [
+        '#264653',
+        '#2a9d8f',
+        '#e9c46a',
+        '#f4a261',
+        '#e76f51',
+        '#d62828',
+        '#023e8a',
+        '#0077b6',
+        '#0096c7',
+        '#00b4d8',
+        '#48cae4'
+      ]
     });
-  });
-}); 
+
+    /** Instances **/
+
+    Coloris.setInstance('.instance1', {
+      theme: 'pill',
+      themeMode: 'dark',
+      formatToggle: true,
+      closeButton: true,
+      clearButton: true,
+      swatches: [
+        '#067bc2',
+        '#84bcda',
+        '#80e377',
+        '#ecc30b',
+        '#f37748',
+        '#d56062'
+      ]
+    });
+
+    Coloris.setInstance('.colorpicker', { theme: 'polaroid' });
       </script>
       <button class="btn h-9 w-9 p-0 detect-object-btn">
-        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M7 11C8.10457 11 9 10.1046 9 9C9 7.89543 8.10457 7 7 7C5.89543 7 5 7.89543 5 9C5 10.1046 5.89543 11 7 11Z"
-              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M5.56055 21C11.1305 11.1 15.7605 9.35991 21.0005 15.7899" stroke="#6d7c91" stroke-width="1.5"
-              stroke-linecap="round" stroke-linejoin="round"></path>
-            <path
-              d="M14.35 3H5C3.93913 3 2.92172 3.42136 2.17157 4.17151C1.42142 4.92165 1 5.93913 1 7V17C1 18.0609 1.42142 19.0782 2.17157 19.8284C2.92172 20.5785 3.93913 21 5 21H17C18.0609 21 19.0783 20.5785 19.8284 19.8284C20.5786 19.0782 21 18.0609 21 17V9"
-              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path
-              d="M22.3098 3.16996L17.2098 8.26005C16.7098 8.77005 15.2098 8.99996 14.8698 8.66996C14.5298 8.33996 14.7598 6.82999 15.2698 6.31999L20.3599 1.23002C20.6171 0.964804 20.9692 0.812673 21.3386 0.807047C21.7081 0.80142 22.0646 0.942731 22.3298 1.19999C22.5951 1.45725 22.7472 1.8093 22.7529 2.17875C22.7585 2.5482 22.6171 2.90475 22.3599 3.16996H22.3098Z"
-              stroke="#6d7c91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </g>
-        </svg>
+        <label class="block">
+          <input
+            class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+            placeholder="Arial / H2"
+            type="text"
+          />
+        </label>
       </button>
       <button class="btn h-9 w-9 p-0 crop-btn">
         <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
