@@ -4,3 +4,4 @@ text for test fetch
 gonna be not merged
 
 merge only in the not master branch
+gonna be merged
