@@ -1,3 +1,4 @@
 newwwww
 text for test fetch
 gonna be not merged
+gonna be merged
