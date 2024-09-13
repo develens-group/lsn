@@ -1,3 +1,4 @@
+after MRG line
 newwwww
 text for test fetch
 gonna be not merged
