@@ -1,4 +1,10 @@
+conflict after-mrg resolved
+after MRG line
 newwwww
 text for test fetch
 gonna be not merged
+
+
+merge only in the not master branch
 gonna be merged
+
